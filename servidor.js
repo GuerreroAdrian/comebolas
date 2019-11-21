@@ -33,7 +33,7 @@ http.createServer(function (req, res) {
             var d = Math.sqrt((dx*dx)+(dy*dy));
             distancias.push(d);
           }
-          res.end(distancias);
+          res.end(JSON.stringify(distancias));
         }
     } else {
       res.end('incorrecto');
