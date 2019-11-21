@@ -30,7 +30,7 @@ http.createServer(function (req, res) {
           for(var i = 0; i < jugadores.length; i++){
             var dx = jugadores[i].pos[0] - jugador.pos[0];
             var dy = jugadores[i].pos[1] - jugador.pos[1];
-            var d = MAth.sqrt((dx*dx)+(dy*dy));
+            var d = Math.sqrt((dx*dx)+(dy*dy));
             distancias.push(d);
           }
           res.end(distancias);
