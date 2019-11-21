@@ -7,9 +7,9 @@ http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   var q = url.parse(req.url, true).query;
   
-  if(JSON.parse(q.jugador)){
-    res.end('Interpretado');
+  if(q.jugador){
+    res.end('Recibido');
   } else {
-     res.end('Lista de Nombres ' + nombres.join());
+     res.end('Error');
   } 
 }).listen(process.env.PORT);
