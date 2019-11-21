@@ -1,6 +1,8 @@
 var http = require('http');
+var url = require('url');
 
 http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hola este es el servidor de <b>Adrian</b>!');
+  var q = url.parse(rec.url, true).query;
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hola' + q.nombre);
 }).listen(process.env.PORT);
