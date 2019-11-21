@@ -25,6 +25,7 @@ http.createServer(function (req, res) {
         jugadores.push(jugador);
         res.end('Jugador Creado');
       } else {
+        jugadores[indice] = jugador;
         res.end('Jugador Actualizado');
       }
        } else {
