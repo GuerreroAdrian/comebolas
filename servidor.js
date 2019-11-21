@@ -1,11 +1,15 @@
 var http = require('http');
 var url = require('url');
 
-var nombres = [];
+var jugadores = [];
 
 http.createServer(function (req, res) {
-  var q = url.parse(req.url, true).query;
-  nombres.push(q.nombre);
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Lista de Nombres ' + nombres.join());
+  var q = url.parse(req.url, true).query;
+  
+  if(JSON.parse(q.jugador)){
+    res.end('Interpretado');
+  } else {
+     res.end('Lista de Nombres ' + nombres.join());
+  } 
 }).listen(process.env.PORT);
