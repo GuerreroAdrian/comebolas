@@ -34,6 +34,7 @@ http.createServer(function (req, res) {
             var objetojugador = {nombre: jugadores[i].nom, Esta_a: d + " Unidades", mide: jugadores[i].tam};
             otrosjugadores.push(objetojugador);
             if(d < 20){
+              console.log("hola");
               res.end(JSON.stringify(otrosjugadores));
             } else{console.log("hola");}
           }
