@@ -25,15 +25,15 @@ http.createServer(function (req, res) {
           jugadores.push(jugador);
           res.end('Jugador Creado');
         } else {
-          var distancias = [];
+          var otrosjugadores = [];
           jugadores[indice] = jugador;
           for(var i = 0; i < jugadores.length; i++){
             var dx = jugadores[i].pos[0] - jugador.pos[0];
             var dy = jugadores[i].pos[1] - jugador.pos[1];
             var d = Math.sqrt((dx*dx)+(dy*dy));
-            distancias.push(d);
+            otrosjugadores.push(d);
           }
-          res.end(JSON.stringify(distancias));
+          res.end(JSON.stringify(otrosjugadores));
         }
     } else {
       res.end('incorrecto');
