@@ -34,7 +34,9 @@ http.createServer(function (req, res) {
             var objetojugador = {nombre: jugadores[i].nom, Esta_a: d + " de ti", mide: jugadores[i].tam};
             otrosjugadores.push(objetojugador);
           }
-          res.end(JSON.stringify(otrosjugadores));
+          if(d < 20){
+            res.end(JSON.stringify(otrosjugadores));
+          }
         }
     } else {
       res.end('incorrecto');
